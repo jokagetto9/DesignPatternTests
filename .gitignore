@@ -48,3 +48,4 @@ Temporary Items
 *.tlog
 DesignPatternTests.sdf
 Debug/
+ipch/
