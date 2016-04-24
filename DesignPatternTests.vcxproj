@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E5907B97-7B41-4429-B772-DD17FA1DD358}</ProjectGuid>
+    <ProjectGuid>{895FE84E-F589-48F8-9581-4EAD1A401F07}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DesignPatternTests</RootNamespace>
   </PropertyGroup>
@@ -79,6 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

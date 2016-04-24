@@ -1,25 +1,29 @@
 #include "lib.h"
-#include "rapidjson/document.h"
-#include "rapidjson/writer.h"
-#include "rapidjson/stringbuffer.h"
-#include <iostream>
+#include "rapidxml/rapidxml_utils.hpp"
+using namespace rapidxml;
 
-using namespace rapidjson;
+void pause(){
+	int a;
+	cin >> a;
+}
 
 //********************************* MAIN *********************************
 int main(int argc, char* args[]){
-	char *json;
-	stringstream temp;
-	ifstream file ("test.json");
-	if (file.is_open())  {
-		temp << file.rdbuf();
-		json = (char*)temp.str().c_str();
-		file.close();
+    file<> xmlFile("test.xml"); // Default template is char
+    xml_document<> doc;
+    doc.parse<0>(xmlFile.data());
 
-		Document d;
-		d.Parse(json);
-		int a;
-		cin >> a;
-		return 0;
-	} 
+	xml_node<> *node = doc.first_node();
+	stringstream ss;
+	ss << node->value();
+	int i;
+	ss >> i;
+	cout << i + 7 << "\n";
+	ss << node->first_attribute()->value();
+	string s;
+	ss >> s;
+	cout << s << "\n";
+
+	pause();
+	return 0;
 }//*/
